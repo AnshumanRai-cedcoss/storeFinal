@@ -1,0 +1,48 @@
+<?php $role= $this->request->get('bearer'); ?>
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class="h3 mb-3 fw-normal">Place Order</h1>
+
+  <div class="form-floating">
+      <?php echo $this->tag->textField(["customerName","value"=>$data->customerName,"class"=>"form-control"]); ?>
+      <label for="name">Customer Name</label>
+     </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->textField(["address","value"=>$data->address,"class"=>"form-control"]); ?>
+       <label for="address">address</label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->textField(["zip","value"=>$data->zip,"class"=>"form-control"]); ?>
+       <label for="zip">zip</label>
+   </div>
+
+   <div class="form-floating">
+  
+   <select name="product" class="w-100 p-2">
+	<option value="">--- Choose a product ---</option>
+    <?php for ($i=0; $i < count($name) ; $i++) { 
+        ?> <option><?php echo $name[$i]->name;?></option><?php 
+    } ?>
+	
+</select>
+
+   </div>
+
+   <div class="form-floating">  <?php
+
+       echo $this->tag->textField(["quantity","value"=>$data->quantity,"class"=>"form-control"]); ?>
+       <label for="quantity">quantity</label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+        ["name" => "placeOrder","value"=> "Update Order", "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+
+  
+
+</form>

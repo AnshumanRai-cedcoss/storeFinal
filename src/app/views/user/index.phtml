@@ -1,0 +1,40 @@
+
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class="h3 mb-3 fw-normal">Add User</h1>
+
+ <div class="form-floating">
+      <?php echo $this->tag->textField(["name","value"=> "","class"=>"form-control"]); ?>
+      <label for="name">User Name</label>
+     </div>
+
+
+     <div class="form-floating">
+      <?php echo $this->tag->emailField(["email","value"=> "","class"=>"form-control"]); ?>
+      <label for="email">Email</label>
+     </div>
+     <div class="form-floating">
+      <?php echo $this->tag->passwordField(["password","value"=> "","class"=>"form-control"]); ?>
+      <label for="password">Password</label>
+     </div>
+
+  <div class="form-floating">
+      <?php echo $this->tag->textField(["role","value"=> "","class"=>"form-control"]); ?>
+      <label for="role">Job Profile</label>
+     </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+   ["name" => "addUser","value"=> "Add User", "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+
+   <div class="form-floating text-success">
+       <?php if(isset($message))
+       {
+          echo $message;
+       } ?>
+   </div>
+
+</form>

@@ -1,0 +1,46 @@
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class="h3 mb-3 fw-normal">Product Details</h1>
+
+  <div class="form-floating">
+      <?php echo $this->tag->textField(["name","value" => $data->name,"class"=>"form-control"]); ?>
+      <label for="name">Product Name</label>
+     </div>
+
+  <div class="form-floating">
+  <?php echo $this->tag->textArea(
+    [
+        "description",
+        "cols" => 50,
+        "rows" => 10,
+        "value" => $data->description,
+        "class" => "form-control"
+    ]
+    );
+    ?> 
+       <label for="description">Description</label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->textField(["tags" , "value" => $data->tags,"class"=>"form-control"]); ?>
+       <label for="tags">Tags</label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->textField(["price", "value" => $data->price,"class"=>"form-control"]); ?>
+       <label for="price">Price</label>
+   </div>
+
+   <div class="form-floating">
+       <?php echo $this->tag->textField(["stock", "value" => $data->stock,"class"=>"form-control"]); ?>
+       <label for="stock">Stock</label>
+   </div>
+
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+   ["name" => "editProd","value"=> "Update Product",  "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+
+</form>

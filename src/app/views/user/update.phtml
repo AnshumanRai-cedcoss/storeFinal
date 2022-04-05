@@ -1,0 +1,42 @@
+
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form(""); ?>
+ <h1 class="h3 mb-3 fw-normal">Update User</h1>
+
+ <div class="form-floating">
+      <?php echo $this->tag->textField(["name","value"=> $data->name,"class"=>"form-control"]); ?>
+      <label for="name">User Name</label>
+     </div>
+
+
+     <div class="form-floating">
+      <?php echo $this->tag->emailField(["email","value"=> $data->email,"class"=>"form-control"]); ?>
+      <label for="email">Email</label>
+     </div>
+     <div class="form-floating">
+      <?php echo $this->tag->passwordField(["password","value"=> $data->password,"class"=>"form-control"]); ?>
+      <label for="password">Password</label>
+     </div>
+<br>
+     <div class="form-floating">
+  
+            <select name="role" class="w-100 py-2">
+            <option value="">---Select job profile ---</option>
+            <?php for ($i=0; $i < count($role) ; $i++) { 
+                ?> <option><?php echo $role[$i]->jobProfile;?></option><?php 
+            } ?>
+   
+</select>
+
+  </div>
+<br>
+  <div class="form-floating">
+       <?php echo $this->tag->submitButton(
+   ["name" => "addUser","value"=> "Update User", "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+
+
+
+</form>

@@ -1,0 +1,37 @@
+<?php $role= $this->request->get('bearer'); ?>
+<main class="form-signup my-5 text-center" style="padding-left:35%;padding-right:35%;">
+ 
+ <?php echo $this->tag->form("settings/update?bearer=".$role); ?>
+ <h1 class="h3 mb-3 fw-normal">Apply Settings</h1>
+
+  <div class="form-floating py-2 ">
+      <select name="title" class="w-100 p-2 form-control text-center">
+	<option value="">------ Optimize title ------</option>
+     <option value="withTag">With tags</option>
+     <option value="withoutTag">Without tags</option>
+
+	
+</select>
+     </div>
+
+  <div class="form-floating py-2">
+  <?php echo $this->tag->textField(["price","class"=>"form-control","value"=> $data[0]->price]); ?>
+       <label for="price">Default Price</label>
+   </div>
+
+   <div class="form-floating py-2">
+  <?php echo $this->tag->textField(["stock","class"=>"form-control","value"=> $data[0]->stock]); ?>
+       <label for="stock">Default Stock</label>
+   </div>
+
+   <div class="form-floating py-2">
+  <?php echo $this->tag->textField(["zip","class"=>"form-control","value"=> $data[0]->zip]); ?>
+       <label for="zip">Default Zip</label>
+   </div>
+
+   <div class="form-floating py-2">
+       <?php echo $this->tag->submitButton(
+   ["name" => "addSett","value"=> "Add Settings", "class" => "w-100 btn btn-lg btn-primary"]
+); ?>
+   </div>
+</form>
