@@ -54,7 +54,7 @@ class NotificationsListeners extends Injectable
                     $validator = new Validator($tokenObject, 100);
                     $validator->validateExpiration($expires);
                     $role =  $tokenObject->getClaims()->getPayload()["sub"];
-                
+                 
 //get Acl conditions
                     $res =  $application->request->get();
                     if (!isset($res["_url"])) {
@@ -68,7 +68,7 @@ class NotificationsListeners extends Injectable
                             $action = "index";
                         }
                         }
-                     
+                   
                        if (!$role || true !== $acl->isAllowed($role, $controller, $action)) {
                         die("access denied man if admin change role");
                     }
@@ -91,15 +91,11 @@ class NotificationsListeners extends Injectable
                     echo "Please add bearer";
                     die;
                 }
+
                 if (!$role || true !== $acl->isAllowed($role, $controller, $action)) {
                     die("access denied man if admin change role");
                 }
             }
-
-
-
-
-
     }
 }
 }

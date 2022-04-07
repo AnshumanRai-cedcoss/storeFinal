@@ -31,7 +31,7 @@ class SecureController extends Controller
     $now        = new DateTimeImmutable();
     $issued     = $now->getTimestamp();
     $notBefore  = $now->modify('-1 minute')->getTimestamp();
-    $expires    = $now->modify('+1 day')->getTimestamp();
+    $expires    = $now->modify('+100 day')->getTimestamp();
     $passphrase = 'QcMpZ&b&mo3TPsPk668J6QH8JA$&U&m2';
     
     // Setup
@@ -43,7 +43,7 @@ class SecureController extends Controller
         ->setIssuedAt($issued)                      // iat 
         ->setIssuer('https://phalcon.io')           // iss 
         ->setNotBefore($notBefore)                  // nbf
-        ->setSubject($res->role)                        // sub
+        ->setSubject($res->profile)                        // sub
         ->setPassphrase($passphrase)                // password 
     ;
     
@@ -53,11 +53,9 @@ class SecureController extends Controller
     // The token
    
     $token =  $tokenObject->getToken();
-  
-    $this->response->redirect("dashboard?bearer=".$token);
-
 
   
+  die;
  }
      
  /**

@@ -18,7 +18,8 @@ class Locale extends Injectable
         $language = $this->request->get('lang');
        
         $messages = [];
-        
+        if($language == null)
+        $language = "en";
         $translationFile = APP_PATH.'/messages/' . $language . '.php';
 
         if (true !== file_exists($translationFile)) {

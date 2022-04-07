@@ -50,7 +50,8 @@ class ProductController extends Controller
   public function listAction()
   {
     $locale = $this->request->get("lang");
-
+    if($locale == null)
+    $locale = "en";
     $v = new App\Locale\Locale();
 
     $data = $v->getTranslator();

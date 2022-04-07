@@ -15,7 +15,7 @@ use Phalcon\Http\Response\Cookies;
 use Phalcon\Config\ConfigFactory;
 use Phalcon\Logger\AdapterFactory;
 use Phalcon\Logger\LoggerFactory;
-use Phalcon\Logger\Adapter\Stream;
+use Phalcon\Session\Adapter\Stream;
 use Phalcon\Events\Manager as EventsManager;
 use App\Locale\Locale;
 use Phalcon\Cache;
