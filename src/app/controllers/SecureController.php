@@ -31,7 +31,7 @@ class SecureController extends Controller
     $now        = new DateTimeImmutable();
     $issued     = $now->getTimestamp();
     $notBefore  = $now->modify('-1 minute')->getTimestamp();
-    $expires    = $now->modify('+100 day')->getTimestamp();
+    $expires    = $now->modify('+10 day')->getTimestamp();
     $passphrase = 'QcMpZ&b&mo3TPsPk668J6QH8JA$&U&m2';
     
     // Setup
@@ -53,8 +53,7 @@ class SecureController extends Controller
     // The token
    
     $token =  $tokenObject->getToken();
-
-  
+    echo $token;
   die;
  }
      

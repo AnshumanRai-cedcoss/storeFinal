@@ -41,6 +41,9 @@ class IndexController extends Controller
                 $this->session = $this->container->getSession();
                 $this->session->set('user',json_decode(json_encode($result)));
                 $res = json_decode(json_encode($result)); 
+                // echo "<pre>";
+                // print_r($res);
+                // die;
                 $this->response->redirect('dashboard?bearer='.$res[0]->role);
             }
             else 
